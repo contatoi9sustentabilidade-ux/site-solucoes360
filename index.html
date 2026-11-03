@@ -1,0 +1,899 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>360° Soluções Empresariais</title>
+<meta name="description" content="Estruturamos empresas através da organização, da estratégia e de processos que geram resultados reais e performance operacional. Petrolina, PE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --black:#0b0b0b;
+  --ink:#141414;
+  --ink-2:#1c1c1c;
+  --line:rgba(255,255,255,.10);
+  --white:#ffffff;
+  --paper:#f6f3ef;
+  --text:#1a1a1a;
+  --muted:#6b6560;
+  --muted-d:#a9a29b;
+  --bronze:#B08A66;
+  --bronze-l:#C9A27E;
+  --bronze-d:#8E6D4F;
+  --radius:18px;
+  --wrap:1760px;
+  --gutter:clamp(18px,4.2vw,80px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--paper);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
+em{font-style:normal;color:var(--bronze)}
+.eyebrow{font-family:'Montserrat',sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze);display:inline-flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+h1,h2,h3{font-weight:600;line-height:1.08;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,4.4vw,3.3rem)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:500;font-size:.98rem;transition:.25s;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--bronze);color:#fff}
+.btn-primary:hover{background:var(--bronze-d)}
+.btn-ghost{border-color:rgba(255,255,255,.3);color:#fff}
+.btn-ghost:hover{border-color:var(--bronze);color:var(--bronze-l)}
+.btn svg{width:16px;height:16px}
+.arrow-ic{width:.8em;height:.8em;fill:var(--bronze);flex:none}
+
+/* Logo */
+.logo{width:184px;height:auto}
+
+/* Header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s;padding-top:env(safe-area-inset-top,0px)}
+header.scrolled{background:rgba(11,11,11,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+.nav ul{display:flex;gap:34px;list-style:none}
+.nav ul a{color:rgba(255,255,255,.8);font-size:.95rem;transition:.2s}
+.nav ul a:hover{color:var(--bronze-l)}
+.nav .btn{padding:11px 20px;font-size:.9rem}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+.burger span{display:block;height:2px;background:#fff;margin:7px 6px;transition:.3s}
+
+/* Hero */
+.hero{position:relative;min-height:min(860px,94vh);background:radial-gradient(1200px 600px at 80% 20%,#2a2219 0%,transparent 60%),radial-gradient(900px 700px at 10% 90%,#1d1915 0%,transparent 60%),var(--black);color:#fff;display:flex;align-items:center;overflow:hidden;padding:130px 0 80px}
+.hero::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");pointer-events:none}
+.hero-bg{position:absolute;right:-14%;top:50%;transform:translateY(-50%);width:min(1000px,90vw);height:auto;opacity:.06;pointer-events:none}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:end;width:100%}
+.hero h1{font-size:clamp(2.6rem,6.6vw,5.4rem);font-weight:600;margin:26px 0 26px}
+.hero p.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:rgba(255,255,255,.72);max-width:560px;font-weight:300}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+.hero-card{border:1px solid var(--line);border-radius:var(--radius);padding:30px;background:rgba(255,255,255,.03);backdrop-filter:blur(4px)}
+.hero-card .k{font-family:'Montserrat';font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted-d)}
+.hero-card ul{list-style:none;margin-top:18px}
+.hero-card li{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:1.1rem;letter-spacing:.04em}
+.hero-card li:first-child{border-top:0}
+.scroll-hint{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:2;font-family:'Montserrat';font-size:.68rem;letter-spacing:.3em;color:rgba(255,255,255,.4);text-transform:uppercase}
+
+/* Marquee */
+.marquee{background:var(--bronze);color:#fff;overflow:hidden;white-space:nowrap;padding:18px 0}
+.marquee-track{display:inline-flex;animation:mq 30s linear infinite}
+.marquee span{font-family:'Montserrat';font-weight:600;letter-spacing:.3em;font-size:.9rem;padding:0 28px;display:inline-flex;align-items:center;gap:56px}
+.marquee span::after{content:"•";opacity:.6}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* Sections */
+section{padding:120px 0}
+.sec-head{max-width:760px;margin-bottom:60px}
+.sec-head h2{margin-top:18px}
+.sec-head p{margin-top:20px;color:var(--muted);font-size:1.12rem}
+
+/* Sobre */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-grid p{color:var(--muted);font-size:1.12rem;margin-top:22px}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.value{background:#fff;border-radius:var(--radius);padding:30px 26px;border:1px solid #ebe5de;transition:.3s}
+.value:hover{transform:translateY(-4px);border-color:var(--bronze)}
+.value .n{font-family:'Montserrat';font-size:.72rem;letter-spacing:.2em;color:var(--bronze)}
+.value h3{font-size:1.35rem;margin:14px 0 8px}
+.value p{font-size:.95rem;color:var(--muted);margin:0}
+
+/* Método */
+.method{background:var(--black);color:#fff;position:relative;overflow:hidden}
+.method .sec-head p{color:rgba(255,255,255,.65)}
+.method-title{font-family:'Outfit';font-weight:700;font-size:clamp(1.1rem,2vw,1.4rem);letter-spacing:.18em;color:var(--bronze-l);margin-top:14px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.step{padding:50px 36px 40px;border-right:1px solid var(--line);position:relative;transition:.35s}
+.step:last-child{border-right:0}
+.step:hover{background:rgba(176,138,102,.06)}
+.step .num{font-size:clamp(6rem,11vw,9rem);font-weight:700;line-height:.9;color:var(--bronze);letter-spacing:-.04em}
+.step .lbl{font-family:'Montserrat';font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.55);margin:22px 0 14px}
+.step h3{font-size:1.5rem;margin-bottom:12px}
+.step p{color:rgba(255,255,255,.66)}
+
+/* Pilares */
+.pillars{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
+.p-tabs{list-style:none;border-top:1px solid #e3dcd3}
+.p-tab{display:flex;align-items:center;gap:22px;width:100%;background:none;border:0;border-bottom:1px solid #e3dcd3;padding:26px 6px;text-align:left;cursor:pointer;font-family:inherit;color:var(--text);transition:.25s}
+.p-tab .i{font-family:'Montserrat';font-size:.8rem;color:var(--muted);width:28px}
+.p-tab .t{font-size:clamp(1.3rem,2.3vw,1.8rem);font-weight:600;flex:1}
+.p-tab .go{width:42px;height:42px;border-radius:50%;border:1px solid #d9d0c5;display:grid;place-items:center;transition:.25s}
+.p-tab .go svg{width:14px;height:14px;fill:var(--muted);transition:.25s}
+.p-tab:hover .t{color:var(--bronze-d)}
+.p-tab.active .t{color:var(--bronze)}
+.p-tab.active .go{background:var(--bronze);border-color:var(--bronze)}
+.p-tab.active .go svg{fill:#fff}
+.p-panel{background:var(--ink);color:#fff;border-radius:24px;padding:48px;position:sticky;top:110px;min-height:460px;overflow:hidden}
+.p-panel .bg-num{position:absolute;right:-10px;bottom:-60px;font-size:20rem;font-weight:700;color:rgba(255,255,255,.035);line-height:1;pointer-events:none}
+.p-panel .sub{font-family:'Montserrat';font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze-l)}
+.p-panel h3{font-size:clamp(2rem,3.4vw,2.8rem);margin:14px 0 28px}
+.p-panel ul{list-style:none;position:relative}
+.p-panel li{display:flex;gap:14px;align-items:center;padding:16px 0;border-top:1px solid var(--line);font-size:1.08rem}
+.p-panel .btn{margin-top:32px}
+.p-panel ul.two{display:grid;grid-template-columns:1fr 1fr;column-gap:24px}
+.p-panel ul.two li{font-size:.98rem;padding:12px 0}
+@media (max-width:520px){.p-panel ul.two{grid-template-columns:1fr}}
+.fade{animation:fd .45s ease}
+@keyframes fd{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* Fique atento */
+.news{background:var(--ink);color:#fff}
+.news .sec-head p{color:rgba(255,255,255,.65)}
+.news-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.news-card{display:flex;flex-direction:column;gap:12px;padding:28px 24px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.03);transition:.3s;min-width:0}
+.news-card:hover{border-color:var(--bronze);transform:translateY(-4px)}
+.news-card .tag{align-self:flex-start;font-family:'Montserrat';font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze-l);border:1px solid rgba(176,138,102,.4);padding:5px 10px;border-radius:999px}
+.news-card h3{font-size:1.3rem}
+.news-card p{color:rgba(255,255,255,.65);font-size:.95rem;flex:1}
+.news-card .more{font-size:.9rem;color:var(--bronze-l)}
+@media (max-width:1060px){.news-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.news-grid{grid-template-columns:1fr}}
+
+/* CTA band */
+.band{background:linear-gradient(135deg,var(--bronze) 0%,var(--bronze-d) 100%);color:#fff;padding:90px 0;position:relative;overflow:hidden}
+.band .wrap{display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;position:relative;z-index:1}
+.band h2{max-width:720px}
+.band .btn{background:#fff;color:var(--black)}
+.band .btn:hover{background:var(--black);color:#fff}
+.band-arrow{position:absolute;right:-60px;top:-60px;width:360px;opacity:.12;fill:#fff}
+
+/* Contato */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.c-list{list-style:none;border-top:1px solid #e3dcd3}
+.c-list a,.c-list div{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 4px;border-bottom:1px solid #e3dcd3;transition:.2s}
+.c-list a:hover{color:var(--bronze-d)}
+.c-list .k{font-family:'Montserrat';font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.c-list .v{font-size:1.2rem;font-weight:500;text-align:right;min-width:0;overflow-wrap:anywhere}
+.map{border-radius:24px;overflow:hidden;min-height:340px;background:var(--black);color:#fff;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:34px;gap:10px;transition:.3s}
+.map:hover{transform:translateY(-3px)}
+.map .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:38px 38px}
+.map .pin{position:absolute;top:34%;left:50%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;background:rgba(176,138,102,.18);display:grid;place-items:center}
+.map .pin::after{content:"";width:22px;height:22px;border-radius:50%;background:var(--bronze);box-shadow:0 0 0 6px rgba(176,138,102,.35)}
+.map .k{position:relative;font-family:'Montserrat';font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze-l)}
+.map strong{position:relative;font-size:1.4rem;font-weight:500;line-height:1.3}
+.map span.go{position:relative;color:rgba(255,255,255,.7);font-size:.95rem}
+
+/* Footer */
+footer{background:var(--black);color:rgba(255,255,255,.7);padding:80px 0 30px}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;padding-bottom:50px;border-bottom:1px solid var(--line)}
+footer .logo{width:190px}
+footer p.tag{margin-top:22px;max-width:340px;font-size:.95rem}
+footer h4{font-family:'Montserrat';font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze-l);margin-bottom:18px;font-weight:600}
+footer ul{list-style:none}
+footer li{padding:5px 0}
+footer a:hover{color:var(--bronze-l)}
+.f-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:26px;font-size:.84rem;color:rgba(255,255,255,.45)}
+
+/* WhatsApp float */
+.wa{position:fixed;right:calc(22px + env(safe-area-inset-right,0px));bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:.25s}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:30px;height:30px;fill:#fff}
+
+/* Reveal */
+
+
+/* Responsive */
+@media (max-width:960px){
+  .nav ul,.nav .btn{display:none}
+  .burger{display:block}
+  header.open{background:var(--black)}
+  header.open .nav ul{display:flex;flex-direction:column;position:absolute;top:calc(84px + env(safe-area-inset-top,0px));left:0;right:0;background:var(--black);padding:10px max(var(--gutter),env(safe-area-inset-right,0px)) 30px max(var(--gutter),env(safe-area-inset-left,0px));gap:0;border-bottom:1px solid var(--line)}
+  header.open .nav ul a{display:block;padding:16px 0;border-bottom:1px solid var(--line);font-size:1.1rem}
+  header.open .burger span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+  header.open .burger span:nth-child(2){opacity:0}
+  header.open .burger span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+  .hero-inner,.about-grid,.pillars,.contact-grid,.f-grid{grid-template-columns:1fr}
+  .hero-inner{gap:40px}
+  .steps{grid-template-columns:1fr}
+  .step{border-right:0;border-bottom:1px solid var(--line);padding:40px 6px}
+  .p-panel{position:relative;top:0;padding:34px 26px;min-height:0}
+  section{padding:84px 0}
+  .about-grid{gap:44px}
+}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  .values{grid-template-columns:1fr}
+  .c-list a,.c-list div{flex-direction:column;align-items:flex-start;gap:6px}
+  .c-list .v{text-align:left}
+  .scroll-hint{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+
+/* ===== Check-up no topo ===== */
+.hero-inner{align-items:center}
+.hero-card{padding:26px}
+.ck-top{display:flex;justify-content:space-between;align-items:center}
+.ck-top .k{font-family:'Montserrat';font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--bronze-l)}
+.ck-count{font-size:.8rem;color:rgba(255,255,255,.55);font-variant-numeric:tabular-nums}
+.ck-bar{height:3px;background:rgba(255,255,255,.1);border-radius:3px;margin:12px 0 14px;overflow:hidden}
+.ck-bar span{display:block;height:100%;width:0;background:var(--bronze);transition:width .5s ease}
+.ck-intro{font-size:.9rem;color:rgba(255,255,255,.6);margin-bottom:6px}
+.ck-item{border-top:1px solid var(--line)}
+.ck-item:first-child{border-top:0}
+.ck-q{display:flex;align-items:center;gap:12px;width:100%;background:none;border:0;color:#fff;font-family:inherit;font-size:1.1rem;letter-spacing:.02em;padding:14px 0;cursor:pointer;text-align:left}
+.ck-q .lab{flex:1}
+.ck-q .st{font-size:.72rem;font-family:'Montserrat';letter-spacing:.12em;text-transform:uppercase;color:var(--bronze-l)}
+.ck-q .pm{width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-size:1rem;line-height:1;transition:.3s;flex:none}
+.ck-item.open .ck-q .pm{transform:rotate(45deg);border-color:var(--bronze);background:var(--bronze)}
+.ck-q:hover .lab{color:var(--bronze-l)}
+.ck-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.ck-item.open .ck-body{grid-template-rows:1fr}
+.ck-body>div{overflow:hidden}
+.ck-in{padding:0 0 16px 32px;display:flex;flex-direction:column;gap:10px}
+.ck-in p{font-size:.92rem;color:rgba(255,255,255,.72);line-height:1.55}
+.ck-in .ask{font-size:.95rem;color:#fff;font-weight:500}
+.ck-ans{display:flex;gap:8px}
+.ck-ans button{flex:1;padding:9px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:none;color:#fff;font-family:inherit;font-size:.9rem;cursor:pointer;transition:.2s}
+.ck-ans button:hover{border-color:var(--bronze)}
+.ck-ans button.sel{background:var(--bronze);border-color:var(--bronze)}
+.ck-result{margin-top:14px;padding:18px;border-radius:14px;background:rgba(176,138,102,.14);border:1px solid rgba(176,138,102,.4);display:flex;flex-direction:column;gap:10px;animation:fd .45s ease}
+.ck-result .score{display:flex;align-items:baseline;gap:8px}
+.ck-result .score b{font-size:2.4rem;line-height:1;color:var(--bronze-l);font-variant-numeric:tabular-nums}
+.ck-result .score span{color:rgba(255,255,255,.7);font-size:.9rem}
+.ck-result h4{font-size:1.1rem;font-weight:600}
+.ck-result p{font-size:.9rem;color:rgba(255,255,255,.72)}
+.ck-result .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.ck-result .btn{padding:11px 18px;font-size:.9rem}
+.ck-redo{background:none;border:0;color:rgba(255,255,255,.6);font-family:inherit;font-size:.85rem;text-decoration:underline;cursor:pointer}
+
+/* ===== Equipe em órbita ===== */
+.orb-hint{display:flex;align-items:center;gap:10px;font-size:.95rem!important;color:var(--bronze-d)!important}
+.orbit{position:relative;width:min(500px,100%);aspect-ratio:1;margin:0 auto}
+.orbit::before{content:"";position:absolute;inset:9%;border-radius:50%;border:1px dashed rgba(176,138,102,.55);animation:spin 80s linear infinite}
+.orbit::after{content:"360°";position:absolute;top:2%;left:50%;transform:translateX(-50%);font-family:'Montserrat';font-size:.68rem;letter-spacing:.3em;color:var(--bronze);opacity:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+.orb-center{position:absolute;inset:26%;border-radius:50%;background:var(--black);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;gap:6px;box-shadow:0 20px 50px rgba(0,0,0,.18)}
+.orb-center .area{font-family:'Montserrat';font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze-l)}
+.orb-center h3{font-size:1.15rem;line-height:1.15}
+.orb-center p{font-size:.8rem!important;color:rgba(255,255,255,.7)!important;margin:0!important;line-height:1.45}
+.orb-center .inner{display:flex;flex-direction:column;align-items:center;gap:6px;animation:fd .4s ease}
+.orb-btn{position:absolute;width:100px;height:100px;margin:-50px 0 0 -50px;border-radius:50%;background:#fff;border:1px solid #e3dcd3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-family:inherit;font-size:.74rem;font-weight:600;line-height:1.15;text-align:center;color:var(--text);cursor:pointer;transition:background .25s,color .25s,transform .25s,box-shadow .25s;padding:8px}
+.orb-btn svg{width:26px;height:26px;fill:none;stroke:var(--bronze);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:.25s}
+.orb-btn:hover{transform:scale(1.06);box-shadow:0 10px 24px rgba(0,0,0,.1)}
+.orb-btn.active{background:var(--bronze);border-color:var(--bronze);color:#fff;transform:scale(1.08);box-shadow:0 12px 28px rgba(176,138,102,.4)}
+.orb-btn.active svg{stroke:#fff}
+
+/* ===== Método clicável ===== */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+button.step{background:none;border:0;border-right:1px solid var(--line);color:#fff;font-family:inherit;text-align:left;cursor:pointer;padding:44px 36px 34px;position:relative}
+button.step:last-child{border-right:0}
+button.step::after{content:"";position:absolute;left:36px;right:36px;bottom:0;height:3px;background:var(--bronze);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+button.step.active::after{transform:scaleX(1)}
+button.step .num{color:rgba(176,138,102,.35);transition:color .3s}
+button.step.active .num,button.step:hover .num{color:var(--bronze)}
+button.step .tap{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.85rem;color:var(--bronze-l)}
+button.step.active .tap{opacity:0}
+.step-detail{margin-top:30px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.03);padding:36px}
+.sd-in{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px;animation:fd .45s ease}
+.sd-in .big{display:flex;gap:20px;align-items:flex-start}
+.sd-in .big b{font-size:4.2rem;line-height:.85;color:var(--bronze);font-weight:700}
+.sd-in h3{font-size:1.5rem;margin-bottom:10px}
+.sd-in p{color:rgba(255,255,255,.72)}
+.sd-in h4{font-family:'Montserrat';font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze-l);margin-bottom:12px}
+.sd-in ul{list-style:none;display:flex;flex-direction:column}
+.sd-in li{display:flex;gap:10px;align-items:baseline;padding:10px 0;border-top:1px solid var(--line);font-size:.95rem;color:rgba(255,255,255,.85)}
+.sd-in li svg{position:relative;top:2px}
+
+/* ===== Fique atento ===== */
+.news-card .tag{margin-bottom:2px}
+.news-cta{margin-top:26px;display:flex;align-items:center;gap:20px;padding:22px 26px;border-radius:var(--radius);background:linear-gradient(135deg,rgba(176,138,102,.22),rgba(176,138,102,.06));border:1px solid rgba(176,138,102,.4);flex-wrap:wrap}
+.news-cta .play{width:52px;height:52px;border-radius:50%;background:var(--bronze);display:grid;place-items:center;flex:none}
+.news-cta .play svg{width:22px;height:22px;fill:#fff;margin-left:3px}
+.news-cta .txt{flex:1;min-width:220px;display:flex;flex-direction:column;gap:2px}
+.news-cta .txt strong{font-size:1.1rem;font-weight:600}
+.news-cta .txt span{color:rgba(255,255,255,.68);font-size:.95rem}
+a.news-card .more{font-size:.9rem;color:var(--bronze-l)}
+
+/* ===== Contato com formulário ===== */
+.contact-grid{grid-template-columns:.85fr 1.15fr;align-items:start}
+.contact-left{display:flex;flex-direction:column;gap:24px;min-width:0}
+.contact-left .map{min-height:230px}
+.cform{background:#fff;border:1px solid #e3dcd3;border-radius:24px;padding:34px;display:flex;flex-direction:column;gap:22px;min-width:0}
+.cf-head h3{font-size:1.6rem}
+.cf-head p{color:var(--muted);margin-top:6px}
+.cf-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cf-field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.cf-field.full{grid-column:1/-1}
+.cf-field label{font-family:'Montserrat';font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.cf-field input,.cf-field select,.cf-field textarea{font-family:inherit;font-size:1rem;color:var(--text);background:var(--paper);border:1px solid #e3dcd3;border-radius:12px;padding:13px 14px;width:100%;transition:.2s}
+.cf-field textarea{min-height:130px;resize:vertical}
+.cf-field input:focus,.cf-field select:focus,.cf-field textarea:focus{outline:none;border-color:var(--bronze);background:#fff;box-shadow:0 0 0 3px rgba(176,138,102,.18)}
+.cf-field.err input,.cf-field.err select,.cf-field.err textarea{border-color:#b4473a;background:#fdf3f1}
+.cf-field .em{font-size:.8rem;color:#b4473a}
+.cf-send{align-self:flex-start}
+.cf-send[disabled]{opacity:.6;cursor:wait}
+.cf-status{font-size:.95rem}
+.cf-status .ok{display:flex;flex-direction:column;gap:6px;padding:16px 18px;border-radius:14px;background:#eef6f0;color:#2f6b40;border:1px solid #cfe6d6}
+.cf-status .bad{display:flex;flex-direction:column;gap:10px;padding:16px 18px;border-radius:14px;background:#fdf3f1;color:#8f3427;border:1px solid #f0d4cf}
+.cf-status .bad a{align-self:flex-start}
+.cf-status small{color:var(--muted)}
+
+@media (max-width:960px){
+  .hero-inner{align-items:start}
+  .sd-in{grid-template-columns:1fr;gap:24px}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .steps{grid-template-columns:repeat(3,1fr)}
+  button.step{padding:24px 10px 20px;border-right:1px solid var(--line);border-bottom:0;text-align:center}
+  button.step::after{left:10px;right:10px}
+  button.step .num{font-size:4rem}
+  button.step .lbl{font-size:.6rem;letter-spacing:.12em;margin:10px 0 0}
+  button.step h3,button.step p,button.step .tap{display:none}
+  .step-detail{padding:24px 20px}
+  .sd-in .big b{font-size:3rem}
+  .orbit{aspect-ratio:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .orbit::before{display:none}
+  .orb-btn{position:static;margin:0;width:auto;height:auto;aspect-ratio:1;border-radius:18px;font-size:.72rem}
+  .orb-btn:hover,.orb-btn.active{transform:none}
+  .orb-center{position:static;grid-column:1/-1;order:2;border-radius:20px;padding:24px 20px;min-height:170px}
+  .cform{padding:24px 18px}
+  .cf-grid{grid-template-columns:1fr}
+  .cf-send{align-self:stretch;justify-content:center}
+}
+
+
+/* ===== Nosso espaço (carrossel) ===== */
+.space{background:#ece6de}
+.space-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:40px;flex-wrap:wrap}
+.space-head .sec-head{max-width:640px}
+.car-nav{display:flex;gap:10px}
+.car-btn{width:52px;height:52px;border-radius:50%;border:1px solid #d3c8bb;background:#fff;display:grid;place-items:center;cursor:pointer;transition:.2s}
+.car-btn svg{width:20px;height:20px;fill:none;stroke:var(--text);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.car-btn:hover{background:var(--bronze);border-color:var(--bronze)}
+.car-btn:hover svg{stroke:#fff}
+.car-btn[disabled]{opacity:.35;cursor:default;background:#fff;border-color:#d3c8bb}
+.car-btn[disabled] svg{stroke:var(--text)}
+.car{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 40px)/3);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:4px}
+.car::-webkit-scrollbar{display:none}
+.slide{scroll-snap-align:start;margin:0;position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:#d9d0c5;max-width:100%}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+.slide:hover img{transform:scale(1.04)}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,11,.78) 0%,rgba(11,11,11,0) 42%);pointer-events:none}
+.slide figcaption{position:absolute;left:22px;right:22px;bottom:20px;z-index:1;color:#fff;font-size:1.1rem;font-weight:500;display:flex;align-items:center;gap:12px}
+.slide figcaption span{font-family:'Montserrat';font-size:.7rem;font-weight:600;letter-spacing:.15em;color:#fff;background:var(--bronze);border-radius:999px;padding:5px 10px}
+.car-dots{display:flex;gap:8px;justify-content:center;margin-top:26px}
+.car-dots button{width:8px;height:8px;border-radius:999px;border:0;background:#cbbfb1;cursor:pointer;padding:0;transition:.3s}
+.car-dots button.on{width:28px;background:var(--bronze)}
+@media (max-width:960px){.car{grid-auto-columns:calc((100% - 20px)/2)}}
+@media (max-width:560px){.car{grid-auto-columns:84%;gap:14px}.car-nav{display:none}}
+
+/* ===== Largura total ===== */
+.hero-inner{grid-template-columns:minmax(0,1.3fr) minmax(320px,.7fr);gap:clamp(32px,5vw,90px)}
+.hero-card{justify-self:end;width:100%;max-width:500px}
+.hero h1{font-size:clamp(2.4rem,5.6vw,6.2rem)}
+.hero p.lead{max-width:640px}
+.sec-head{max-width:880px}
+.about-grid{gap:clamp(40px,6vw,110px)}
+.orbit{width:min(560px,100%)}
+.pillars{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,3vw,48px)}
+@media (min-width:1500px){
+  body{font-size:17px}
+  .car{grid-auto-columns:calc((100% - 60px)/4)}
+  .news-card{padding:32px 28px}
+}
+@media (max-width:960px){.hero-inner{grid-template-columns:1fr}.hero-card{justify-self:stretch;max-width:none}.pillars{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}}
+@media (max-width:560px){
+  .hero{padding:110px 0 56px;min-height:0}
+  .hero h1{font-size:2.35rem;margin:18px 0}
+  .hero .ctas{flex-direction:column}
+  .hero .ctas .btn{justify-content:center;white-space:nowrap}
+  .map .pin{top:30px;left:auto;right:30px;transform:none;width:58px;height:58px}
+  h2{font-size:1.9rem}
+  section{padding:68px 0}
+  .marquee span{font-size:.75rem;padding:0 18px}
+  .p-panel{padding:28px 20px}
+  .p-panel h3{font-size:1.8rem}
+  .p-tab{padding:20px 4px;gap:14px}
+  .band{padding:64px 0}
+  .band .btn{width:100%;justify-content:center}
+  .news-cta{padding:20px}
+  .news-cta .btn{width:100%;justify-content:center}
+  .f-grid{gap:34px}
+  .scroll-hint{display:none}
+}
+
+
+/* ===== Ajustes de marca ===== */
+.hero .eyebrow::before{display:none}
+.hero-bg{right:auto;left:auto;top:50%;transform:translateY(-50%);height:min(82%,760px);width:auto;max-width:none;aspect-ratio:1;opacity:.07;
+  inset-inline-end:max(var(--gutter),calc((100vw - var(--wrap))/2 + var(--gutter)))}
+footer .logo{width:200px}
+@media (max-width:960px){.hero-bg{height:auto;width:min(78vw,520px);top:96px;transform:none;opacity:.06}}
+@media (max-width:560px){.logo{width:150px}.hero-bg{width:72vw;top:84px;inset-inline-end:var(--gutter);opacity:.06}}
+
+[hidden]{display:none!important}
+</style>
+<meta name="theme-color" content="#0b0b0b">
+<link rel="icon" href="assets/simbolo-360.png">
+<link rel="canonical" href="https://solucoes360.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="360° Soluções Empresariais">
+<meta property="og:description" content="Sua empresa crescendo com estrutura, clareza e controle. Assessoria e consultoria empresarial em Petrolina-PE.">
+<meta property="og:url" content="https://solucoes360.com.br/">
+<meta property="og:image" content="https://solucoes360.com.br/assets/espaco-trade-center.jpg">
+</head>
+<body>
+
+
+<!-- Símbolos reutilizáveis -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="arw" viewBox="1087 491 250 250"><polygon points="1128,491 1337,491 1337,700 1262,700 1262,620 1140,741 1087,688 1208,567 1128,567"/></symbol>
+  </defs>
+</svg>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#inicio" aria-label="360° Soluções Empresariais — início"><img class="logo" src="assets/logo-branco.png" alt="360° Soluções Empresariais" width="1200" height="245"></a>
+    <ul>
+      <li><a href="#quem-somos">Quem somos</a></li>
+      <li><a href="#metodo">Método</a></li>
+      <li><a href="#pilares">Pilares</a></li>
+      <li><a href="#dicas">Fique atento</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="btn btn-primary" href="https://wa.me/5587988626321" target="_blank" rel="noopener">Fale conosco</a>
+    <button class="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <img class="hero-bg" src="assets/simbolo-360.png" alt="" aria-hidden="true" width="900" height="900">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow rv">Assessoria e consultoria · Petrolina — PE</span>
+      <h1 class="rv">Sua empresa crescendo com estrutura, <em>clareza e controle.</em></h1>
+      <p class="lead rv">Estruturamos empresas através da organização, da estratégia e de processos que geram resultados reais e performance operacional.</p>
+      <div class="ctas rv">
+        <a class="btn btn-primary" href="https://wa.me/5587988626321?text=Ol%C3%A1!%20Gostaria%20de%20um%20diagn%C3%B3stico%20da%20minha%20empresa." target="_blank" rel="noopener">Agendar diagnóstico
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn btn-ghost" href="#metodo">Conheça o método</a>
+      </div>
+    </div>
+    <div class="hero-card rv" id="check">
+      <div class="ck-top">
+        <span class="k">Check-up 360°</span>
+        <span class="ck-count" id="ckCount">0 de 4</span>
+      </div>
+      <div class="ck-bar"><span id="ckBar"></span></div>
+      <p class="ck-intro">Toque em cada pilar, entenda o conceito e descubra como está a sua empresa.</p>
+      <div class="ck-list" id="ckList"></div>
+      <div class="ck-result" id="ckResult" hidden></div>
+    </div>
+  </div>
+  <div class="scroll-hint">Role para descobrir</div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>ORGANIZAÇÃO</span><span>PREVISIBILIDADE</span><span>CONTROLE</span><span>RESULTADOS</span><span>ORGANIZAÇÃO</span><span>PREVISIBILIDADE</span><span>CONTROLE</span><span>RESULTADOS</span>
+    <span>ORGANIZAÇÃO</span><span>PREVISIBILIDADE</span><span>CONTROLE</span><span>RESULTADOS</span><span>ORGANIZAÇÃO</span><span>PREVISIBILIDADE</span><span>CONTROLE</span><span>RESULTADOS</span>
+  </div>
+</div>
+
+<!-- QUEM SOMOS -->
+<section id="quem-somos">
+  <div class="wrap about-grid">
+    <div class="rv">
+      <span class="eyebrow">Quem somos</span>
+      <h2 style="margin-top:18px">Uma visão <em>360°</em> da sua empresa, do caixa às pessoas.</h2>
+      <p>A 360° Soluções Empresariais é uma assessoria e consultoria de gestão estratégica. Reunimos uma equipe multidisciplinar para olhar o negócio por inteiro: finanças, processos, pessoas, contabilidade e rotina administrativa, integrados em um único plano de ação.</p>
+      <p>Cada especialista cuida da sua área, e todos trabalham juntos. É assim que a sua empresa ganha estrutura sem depender de vários fornecedores diferentes.</p>
+      <p class="orb-hint"><svg class="arrow-ic"><use href="#arw"/></svg>Toque em cada profissional para ver como ele atua na sua empresa.</p>
+    </div>
+    <div class="rv">
+      <div class="orbit" id="orbit">
+        <div class="orb-center" id="orbCenter" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section class="method" id="metodo">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Método</span>
+      <div class="method-title">TRÊS · MEIA · ZERO</div>
+      <h2 style="margin-top:14px">Um caminho estruturado, <em>sem improviso.</em></h2>
+      <p>Caminho estruturado que transforma o caos operacional em uma empresa organizada, previsível e escalável. Toque em cada número para entender o conceito.</p>
+    </div>
+    <div class="steps" id="steps" role="tablist"></div>
+    <div class="step-detail" id="stepDetail" role="tabpanel"></div>
+  </div>
+</section>
+
+<!-- PILARES -->
+<section id="pilares">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">O que fazemos</span>
+      <h2 style="margin-top:18px">Quatro pilares, <em>uma gestão integrada.</em></h2>
+      <p>Selecione um pilar para ver o escopo de atuação.</p>
+    </div>
+    <div class="pillars">
+      <ul class="p-tabs rv" role="tablist">
+        <li><button class="p-tab active" data-i="0" role="tab"><span class="i">01</span><span class="t">Financeiro</span><span class="go"><svg><use href="#arw"/></svg></span></button></li>
+        <li><button class="p-tab" data-i="1" role="tab"><span class="i">02</span><span class="t">Processos</span><span class="go"><svg><use href="#arw"/></svg></span></button></li>
+        <li><button class="p-tab" data-i="2" role="tab"><span class="i">03</span><span class="t">Recursos Humanos</span><span class="go"><svg><use href="#arw"/></svg></span></button></li>
+        <li><button class="p-tab" data-i="3" role="tab"><span class="i">04</span><span class="t">Contábil</span><span class="go"><svg><use href="#arw"/></svg></span></button></li>
+      </ul>
+      <div class="p-panel rv" id="panel" role="tabpanel"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FIQUE ATENTO -->
+<section class="news" id="dicas">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Fique atento</span>
+      <h2 style="margin-top:18px">Mudanças que afetam <em>a sua empresa.</em></h2>
+      <p>Acompanhamos as mudanças legais e fiscais para que sua empresa se adapte antes do problema aparecer.</p>
+    </div>
+    <div class="news-grid" id="newsGrid"></div>
+    <div class="news-cta rv">
+      <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      <div class="txt"><strong>Assista aos vídeos sobre cada tema</strong><span>A equipe da 360° explica essas mudanças em vídeos curtos no Instagram.</span></div>
+      <a class="btn btn-primary" href="https://www.instagram.com/360solucoesempresariais_/reels/" target="_blank" rel="noopener">Ver vídeos no Instagram ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="band">
+  <svg class="band-arrow" aria-hidden="true"><use href="#arw"/></svg>
+  <div class="wrap">
+    <h2 class="rv">Sua empresa cresceu. <em style="color:#fff;opacity:.85">Sua gestão, não?</em> Vamos conversar.</h2>
+    <a class="btn rv" href="https://wa.me/5587988626321?text=Ol%C3%A1!%20Quero%20conhecer%20o%20m%C3%A9todo%20360." target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+  </div>
+</div>
+
+<!-- ESPAÇO -->
+<section class="space" id="espaco">
+  <div class="wrap">
+    <div class="space-head">
+      <div class="sec-head rv" style="margin-bottom:0">
+        <span class="eyebrow">Nosso espaço</span>
+        <h2 style="margin-top:18px">Um escritório pronto para <em>receber a sua empresa.</em></h2>
+        <p>Estamos no Trade Center Petrolina, no 5º andar, com salas de atendimento e sala de reunião para conversar com calma sobre o seu negócio.</p>
+      </div>
+      <div class="car-nav">
+        <button class="car-btn" id="carPrev" type="button" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="car-btn" id="carNext" type="button" aria-label="Próxima foto"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+    <div class="car" id="car" tabindex="0" aria-label="Fotos do escritório">
+      <figure class="slide"><img src="assets/espaco-trade-center.jpg" alt="Prédio do Trade Center Petrolina" width="800" height="1000" loading="lazy"><figcaption><span>01</span>Trade Center Petrolina</figcaption></figure>
+      <figure class="slide"><img src="assets/espaco-reuniao.jpg" alt="Sala de reunião com mesa para oito pessoas e TV" width="800" height="1000" loading="lazy"><figcaption><span>02</span>Sala de reunião</figcaption></figure>
+      <figure class="slide"><img src="assets/espaco-sala-vista.jpg" alt="Sala de atendimento com vista para a cidade" width="800" height="1000" loading="lazy"><figcaption><span>03</span>Sala com vista para a cidade</figcaption></figure>
+      <figure class="slide"><img src="assets/espaco-sala-atendimento.jpg" alt="Sala de atendimento com porta de vidro" width="800" height="1000" loading="lazy"><figcaption><span>04</span>Sala de atendimento</figcaption></figure>
+    </div>
+    <div class="car-dots" id="carDots"></div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Vamos conversar</span>
+      <h2 style="margin-top:18px">Conte o momento da sua empresa. <em>Indicamos o caminho.</em></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-left rv">
+        <ul class="c-list">
+          <li><a href="https://wa.me/5587988626321" target="_blank" rel="noopener"><span class="k">WhatsApp</span><span class="v">(87) 98862-6321</span></a></li>
+          <li><a href="mailto:adm360solucoes@gmail.com"><span class="k">E-mail</span><span class="v">adm360solucoes@gmail.com</span></a></li>
+          <li><a href="https://instagram.com/360solucoesempresariais_" target="_blank" rel="noopener"><span class="k">Instagram</span><span class="v">@360solucoesempresariais_</span></a></li>
+        </ul>
+        <a class="map" href="https://maps.google.com/?q=Trade%20Center%2C%20Petrolina%2C%20PE" target="_blank" rel="noopener">
+          <div class="grid"></div><div class="pin"></div>
+          <span class="k">Onde estamos</span>
+          <strong>Trade Center, 5º andar, sala 504<br>Petrolina, PE</strong>
+          <span class="go">Abrir no Google Maps ↗</span>
+        </a>
+      </div>
+      <form class="cform rv" id="cform" novalidate>
+        <div class="cf-head">
+          <h3>Envie sua mensagem</h3>
+          <p>Preencha os campos e a equipe da 360° retorna o contato.</p>
+        </div>
+        <div class="cf-grid">
+          <div class="cf-field"><label for="cfNome">Nome *</label><input id="cfNome" name="nome" type="text" autocomplete="name" maxlength="80" required></div>
+          <div class="cf-field"><label for="cfEmpresa">Empresa</label><input id="cfEmpresa" name="empresa" type="text" autocomplete="organization" maxlength="80"></div>
+          <div class="cf-field"><label for="cfEmail">E-mail *</label><input id="cfEmail" name="email" type="email" autocomplete="email" maxlength="120" required></div>
+          <div class="cf-field"><label for="cfTel">Telefone / WhatsApp *</label><input id="cfTel" name="telefone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="(87) 90000-0000" required></div>
+          <div class="cf-field full"><label for="cfAssunto">Assunto *</label>
+            <select id="cfAssunto" name="assunto" required>
+              <option value="">Selecione</option>
+              <option>Diagnóstico da empresa</option>
+              <option>Financeiro</option>
+              <option>Processos</option>
+              <option>Recursos Humanos</option>
+              <option>Contábil</option>
+              <option>Treinamentos</option>
+              <option>Outro assunto</option>
+            </select></div>
+          <div class="cf-field full"><label for="cfMsg">Como podemos ajudar? *</label><textarea id="cfMsg" name="mensagem" maxlength="3000" required placeholder="Conte um pouco sobre a sua empresa e o que você precisa."></textarea></div>
+        </div>
+        <button class="btn btn-primary cf-send" id="cfSend" type="submit">Enviar mensagem</button>
+        <div class="cf-status" id="cfStatus" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <img class="logo" src="assets/logo-branco.png" alt="360° Soluções Empresariais" width="1200" height="245">
+        <p class="tag">Sua empresa crescendo com estrutura, clareza e controle. Assessoria e consultoria empresarial em Petrolina, PE.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#quem-somos">Quem somos</a></li>
+          <li><a href="#metodo">Método</a></li>
+          <li><a href="#pilares">Pilares</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5587988626321" target="_blank" rel="noopener">(87) 98862-6321</a></li>
+          <li><a href="mailto:adm360solucoes@gmail.com">adm360solucoes@gmail.com</a></li>
+          <li><a href="https://instagram.com/360solucoesempresariais_" target="_blank" rel="noopener">@360solucoesempresariais_</a></li>
+          <li>Trade Center, 5º andar, sala 504</li>
+          <li>Petrolina, PE</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© <span id="y"></span> 360° Soluções Empresariais. Todos os direitos reservados.</span>
+      <span>Organização · Previsibilidade · Controle · Resultados</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5587988626321" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.2.6 4.4 1.7 6.3L3 29l7.3-1.9c1.8 1 3.8 1.5 5.8 1.5 7 0 12.7-5.7 12.7-12.6C28.8 8.6 23 3 16 3zm0 23.2c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3 1.1 1.2-4.2-.3-.4a10.4 10.4 0 0 1-1.6-5.5C5.3 9.8 10.1 5.1 16 5.1s10.6 4.7 10.6 10.5S21.9 26.2 16 26.2zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.5 4.9 2 .9 2.8.9 3.8.8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+
+<script>
+(function(){
+const WA='5587988626321';
+const ARW='<svg class="arrow-ic"><use href="#arw"/></svg>';
+const $=id=>document.getElementById(id);
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---- Check-up 360 ---- */
+const CK=[
+ {t:'Organização',d:'Rotinas claras, responsabilidades definidas e informação no lugar certo. É a base para a empresa funcionar sem depender só do dono.',q:'Sua empresa funciona bem quando você não está lá?'},
+ {t:'Previsibilidade',d:'Saber o que vai entrar e sair do caixa nos próximos meses, para decidir com antecedência e não no susto.',q:'Você sabe como estará o seu caixa daqui a 3 meses?'},
+ {t:'Controle',d:'Indicadores, DRE e obrigações fiscais acompanhados de perto, para enxergar os problemas antes que virem prejuízo.',q:'Você acompanha o lucro real e os indicadores todo mês?'},
+ {t:'Resultados',d:'Quando há organização, previsibilidade e controle, o crescimento vira lucro: menos perdas, menos retrabalho e mais margem.',q:'O seu lucro cresceu junto com o faturamento no último ano?'}
+];
+let ans={},openI=-1;
+function ckRender(){
+  const list=$('ckList');list.innerHTML='';
+  CK.forEach((c,i)=>{
+    const it=document.createElement('div');it.className='ck-item'+(openI===i?' open':'');
+    const st=ans[i]?'<span class="st">'+(ans[i]==='s'?'Sim':'Não')+'</span>':'';
+    it.innerHTML='<button class="ck-q" type="button" aria-expanded="'+(openI===i)+'">'+ARW+'<span class="lab">'+c.t+'</span>'+st+'<span class="pm" aria-hidden="true">+</span></button>'+
+      '<div class="ck-body"><div><div class="ck-in"><p>'+c.d+'</p><span class="ask">'+c.q+'</span><div class="ck-ans"><button type="button" data-v="s" class="'+(ans[i]==='s'?'sel':'')+'">Sim</button><button type="button" data-v="n" class="'+(ans[i]==='n'?'sel':'')+'">Não</button></div></div></div></div>';
+    it.querySelector('.ck-q').onclick=()=>{openI=openI===i?-1:i;ckRender()};
+    it.querySelectorAll('.ck-ans button').forEach(b=>b.onclick=()=>{
+      ans[i]=b.dataset.v;
+      const next=CK.findIndex((_,k)=>!ans[k]);
+      openI=next;ckRender();
+    });
+    list.appendChild(it);
+  });
+  const n=Object.keys(ans).length;
+  $('ckCount').textContent=n+' de 4';$('ckBar').style.width=(n*25)+'%';
+  const r=$('ckResult');
+  if(n<4){r.hidden=true;return}
+  const yes=Object.values(ans).filter(v=>v==='s').length;
+  const lvl=yes===4?['Sua empresa tem uma boa base.','Agora é hora de crescer com segurança. A 360° ajuda a escalar sem perder o controle.']
+    :yes>=2?['Há pontos importantes para estruturar.','Alguns pilares já funcionam, outros ainda dependem do improviso. É justamente aí que o crescimento trava.']
+    :['Sua empresa está crescendo no improviso.','Sem estrutura, cada passo à frente aumenta o risco. Vale conversar com a 360° antes que isso vire prejuízo.'];
+  const falta=CK.filter((_,k)=>ans[k]==='n').map(c=>c.t).join(', ');
+  const msg='Olá! Fiz o Check-up 360° no site: '+yes+' de 4 pilares estruturados.'+(falta?' Preciso de ajuda com: '+falta+'.':'')+' Gostaria de conversar.';
+  r.innerHTML='<div class="score"><b>'+yes+'/4</b><span>pilares estruturados</span></div><h4>'+lvl[0]+'</h4><p>'+lvl[1]+'</p><div class="row"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'">Falar com um especialista</a><button class="ck-redo" type="button">Refazer</button></div>';
+  r.hidden=false;
+  r.querySelector('.ck-redo').onclick=()=>{ans={};openI=0;ckRender()};
+}
+ckRender();
+
+/* ---- Equipe em órbita ---- */
+const IC={
+ est:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>',
+ fin:'<svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16v-5M12 16V7M17 16v-8"/></svg>',
+ pro:'<svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="5" rx="1"/><rect x="14" y="15" width="7" height="5" rx="1"/><path d="M6.5 9v3.5h11V15"/></svg>',
+ rh:'<svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.3"/><path d="M16 14.2c2.6.1 4.5 1.9 4.5 4.8"/></svg>',
+ cont:'<svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h8"/></svg>',
+ adm:'<svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M8 13h8"/></svg>'
+};
+const TEAM=[
+ {k:'est',r:'Consultor de Gestão',a:'Estratégia',d:'Conduz o diagnóstico e o plano de ação, conectando todas as áreas da empresa.'},
+ {k:'fin',r:'Analista Financeiro',a:'Financeiro',d:'Fluxo de caixa, DRE, precificação e indicadores para decidir com números.'},
+ {k:'pro',r:'Gestor de Processos',a:'Processos',d:'Mapeia rotinas, cria POPs e fluxogramas e elimina gargalos operacionais.'},
+ {k:'rh',r:'Analista de RH',a:'Pessoas',d:'Cargos e salários, recrutamento, treinamentos e desenvolvimento de líderes.'},
+ {k:'cont',r:'Contador',a:'Contábil',d:'Tributos, conformidade fiscal e adequação à Reforma Tributária.'},
+ {k:'adm',r:'Analista Administrativo',a:'Administrativo',d:'Organiza documentos, contratos, compras e a rotina administrativa.'}
+];
+const orbit=$('orbit'),center=$('orbCenter');let tSel=-1;
+function teamCenter(){
+  if(tSel<0){center.innerHTML='<div class="inner"><span class="area">Equipe multidisciplinar</span><h3>Sua empresa no centro</h3><p>Seis especialidades olhando para todos os lados do negócio.</p></div>';return}
+  const t=TEAM[tSel];center.innerHTML='<div class="inner"><span class="area">'+t.a+'</span><h3>'+t.r+'</h3><p>'+t.d+'</p></div>';
+}
+TEAM.forEach((t,i)=>{
+  const b=document.createElement('button');b.type='button';b.className='orb-btn';
+  const ang=(i*60-90)*Math.PI/180;b.style.left=(50+41*Math.cos(ang))+'%';b.style.top=(50+41*Math.sin(ang))+'%';
+  b.innerHTML=IC[t.k]+'<span>'+t.a+'</span>';b.setAttribute('aria-label',t.r+', '+t.a);
+  b.onclick=()=>{tSel=tSel===i?-1:i;orbit.querySelectorAll('.orb-btn').forEach((x,k)=>x.classList.toggle('active',k===tSel));teamCenter()};
+  orbit.appendChild(b);
+});
+teamCenter();
+
+/* ---- Método 3·6·0 ---- */
+const MET=[
+ {n:'3',l:'Escuta ativa e estruturada',t:'Diagnóstico preciso',s:'Entender a realidade e fazer as perguntas certas para diagnosticar com precisão.',
+  d:'Antes de propor qualquer mudança, a 360° ouve. Conversamos com sócios e equipe, analisamos números e documentos e acompanhamos a operação para entender a realidade da empresa como ela é.',
+  a:['Conversas com sócios e líderes','Análise de números, documentos e rotinas','Observação da operação no dia a dia'],
+  r:['Diagnóstico claro dos pontos críticos','Prioridades definidas por pilar','Visão integrada do negócio']},
+ {n:'6',l:'Etapas de transformação',t:'Execução sequencial',s:'Caminho estruturado e sequencial para organização e resultados reais.',
+  d:'A transformação acontece em seis etapas, em ordem. Cada etapa tem objetivo, entregas e validação com a empresa antes de seguir para a próxima, para que a organização se sustente e não volte ao improviso.',
+  a:['Plano de ação com etapas e prazos','Implantação acompanhada pela equipe 360°','Validação de cada etapa com a empresa'],
+  r:['Rotinas, POPs e controles implantados','Equipe orientada e treinada','Resultados medidos a cada etapa']},
+ {n:'0',l:'Zero falhas evitáveis',t:'Processos previsíveis',s:'Redução de retrabalho e previsibilidade total nos processos.',
+  d:'O objetivo final é que os erros que se repetem deixem de acontecer. Com padrões, indicadores e acompanhamento, o retrabalho cai e a empresa passa a funcionar de forma previsível.',
+  a:['Padronização e documentação dos processos','Indicadores para acompanhar o desempenho','Ajustes contínuos a partir dos resultados'],
+  r:['Menos retrabalho e desperdício','Previsibilidade nos processos','Uma empresa que não depende do improviso']}
+];
+let mSel=0;
+function metRender(){
+  const st=$('steps');st.innerHTML='';
+  MET.forEach((m,i)=>{
+    const b=document.createElement('button');b.type='button';b.className='step'+(i===mSel?' active':'');b.setAttribute('role','tab');b.setAttribute('aria-selected',i===mSel);
+    b.innerHTML='<div class="num">'+m.n+'</div><div class="lbl">'+m.l+'</div><h3>'+m.t+'</h3><p>'+m.s+'</p><span class="tap">'+ARW+'Toque para entender</span>';
+    b.onclick=()=>{mSel=i;metRender()};st.appendChild(b);
+  });
+  const m=MET[mSel];
+  $('stepDetail').innerHTML='<div class="sd-in"><div class="big"><b>'+m.n+'</b><div><h3>'+m.l+'</h3><p>'+m.d+'</p></div></div><div><h4>O que acontece</h4><ul>'+m.a.map(x=>'<li>'+ARW+x+'</li>').join('')+'</ul></div><div><h4>O que você recebe</h4><ul>'+m.r.map(x=>'<li>'+ARW+x+'</li>').join('')+'</ul></div></div>';
+}
+metRender();
+
+/* ---- Fique atento ---- */
+/* Para ligar cada card ao vídeo, cole o link do post em "v". */
+const NEWS=[
+ {tag:'Fiscal',t:'Reforma Tributária',d:'Notas fiscais sem o preenchimento correto de IBS e CBS passam a ser rejeitadas pela SEFAZ. A emissão pode parar.',v:''},
+ {tag:'Cadastro',t:'Novo formato de CNPJ',d:'O CNPJ passa a aceitar letras e números. Os CNPJs existentes continuam válidos, mas sistemas precisam se adaptar.',v:''},
+ {tag:'Trabalhista',t:'A NR-1 continua valendo',d:'Sem multas não significa sem responsabilidade. Antecipe-se e mantenha sua empresa regularizada.',v:''},
+ {tag:'Gestão',t:'4 sinais de crescimento sem planejamento',d:'Sua empresa cresceu, mas a gestão não acompanhou? Veja os sinais de alerta.',v:''}
+];
+const ng=$('newsGrid');
+NEWS.forEach(n=>{
+  const el=document.createElement(n.v?'a':'div');el.className='news-card';
+  if(n.v){el.href=n.v;el.target='_blank';el.rel='noopener'}
+  el.innerHTML='<span class="tag">'+n.tag+'</span><h3>'+n.t+'</h3><p>'+n.d+'</p>'+(n.v?'<span class="more">Assistir ao vídeo ↗</span>':'');
+  ng.appendChild(el);
+});
+
+/* ---- Formulário de contato ---- */
+/* email: e-mail da 360° que recebe as mensagens. preview: true só na versão de avaliação. */
+const FORM_CFG={email:'adm360solucoes@gmail.com',preview:false};
+const form=$('cform'),status=$('cfStatus'),send=$('cfSend');
+$('cfTel').addEventListener('input',e=>{let v=e.target.value.replace(/\D/g,'').slice(0,11);
+  e.target.value=v.length>6?'('+v.slice(0,2)+') '+v.slice(2,v.length-4)+'-'+v.slice(-4):v.length>2?'('+v.slice(0,2)+') '+v.slice(2):v});
+function fieldErr(id,msg){const f=$(id).closest('.cf-field');f.classList.add('err');if(!f.querySelector('.em')){const s=document.createElement('span');s.className='em';f.appendChild(s)}f.querySelector('.em').textContent=msg}
+form.addEventListener('input',e=>{const f=e.target.closest('.cf-field');if(f){f.classList.remove('err');const m=f.querySelector('.em');if(m)m.remove()}});
+form.addEventListener('submit',async e=>{
+  e.preventDefault();status.innerHTML='';
+  const v={nome:$('cfNome').value.trim(),empresa:$('cfEmpresa').value.trim(),email:$('cfEmail').value.trim(),tel:$('cfTel').value.trim(),assunto:$('cfAssunto').value,msg:$('cfMsg').value.trim()};
+  let bad=false;
+  if(!v.nome){fieldErr('cfNome','Informe seu nome.');bad=true}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)){fieldErr('cfEmail','Informe um e-mail válido.');bad=true}
+  if(v.tel.replace(/\D/g,'').length<10){fieldErr('cfTel','Informe o telefone com DDD.');bad=true}
+  if(!v.assunto){fieldErr('cfAssunto','Escolha um assunto.');bad=true}
+  if(!v.msg){fieldErr('cfMsg','Escreva o que você precisa.');bad=true}
+  if(bad){const f=form.querySelector('.err input,.err select,.err textarea');if(f)f.focus();return}
+  const waText='Olá! Sou '+v.nome+(v.empresa?' ('+v.empresa+')':'')+'.\nAssunto: '+v.assunto+'\n'+v.msg+'\nE-mail: '+v.email+'\nTelefone: '+v.tel;
+  const waLink='https://wa.me/'+WA+'?text='+encodeURIComponent(waText);
+  if(FORM_CFG.preview){
+    status.innerHTML='<div class="ok"><strong>Mensagem enviada!</strong><span>Obrigado, '+esc(v.nome.split(' ')[0])+'. A equipe da 360° vai retornar em breve.</span><small>Prévia: no site publicado, esta mensagem chega direto no e-mail da 360°.</small></div>';
+    form.reset();return;
+  }
+  if(!FORM_CFG.email){
+    status.innerHTML='<div class="bad"><span>Para concluir, envie sua mensagem pelo WhatsApp:</span><a class="btn btn-primary" target="_blank" rel="noopener" href="'+waLink+'">Enviar pelo WhatsApp</a></div>';return;
+  }
+  send.disabled=true;send.textContent='Enviando…';
+  try{
+    const r=await fetch('https://formsubmit.co/ajax/'+FORM_CFG.email,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({Nome:v.nome,Empresa:v.empresa||'-',Email:v.email,Telefone:v.tel,Assunto:v.assunto,Mensagem:v.msg,_subject:'Contato pelo site: '+v.assunto+' - '+v.nome,_replyto:v.email,_template:'table'})});
+    const j=await r.json().catch(()=>({}));
+    if(!r.ok||j.success===false||j.success==='false')throw new Error('falha');
+    status.innerHTML='<div class="ok"><strong>Mensagem enviada!</strong><span>Obrigado, '+esc(v.nome.split(' ')[0])+'. A equipe da 360° vai retornar em breve.</span></div>';form.reset();
+  }catch(err){
+    status.innerHTML='<div class="bad"><span>Não foi possível enviar agora. Você pode mandar a mesma mensagem pelo WhatsApp:</span><a class="btn btn-primary" target="_blank" rel="noopener" href="'+waLink+'">Enviar pelo WhatsApp</a></div>';
+  }
+  send.disabled=false;send.textContent='Enviar mensagem';
+});
+})();
+</script>
+
+<script>
+(function(){
+const car=document.getElementById('car');if(!car)return;
+const slides=[...car.querySelectorAll('.slide')],dots=document.getElementById('carDots'),prev=document.getElementById('carPrev'),next=document.getElementById('carNext');
+const step=()=>slides[1].offsetLeft-slides[0].offsetLeft;
+const pages=()=>Math.max(1,slides.length-Math.round(car.clientWidth/step())+1);
+function idx(){return Math.round(car.scrollLeft/step())}
+function draw(){
+  const n=pages(),i=Math.min(idx(),n-1);
+  if(dots.children.length!==n){dots.innerHTML='';for(let k=0;k<n;k++){const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ir para a foto '+(k+1));b.onclick=()=>go(k);dots.appendChild(b)}}
+  [...dots.children].forEach((b,k)=>b.classList.toggle('on',k===i));
+  prev.disabled=i<=0;next.disabled=i>=n-1;
+}
+function go(k){car.scrollTo({left:Math.max(0,Math.min(k,pages()-1))*step()})}
+prev.onclick=()=>go(idx()-1);next.onclick=()=>go(idx()+1);
+car.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();go(idx()+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(idx()-1)}});
+let t;car.addEventListener('scroll',()=>{clearTimeout(t);t=setTimeout(draw,60)},{passive:true});
+addEventListener('resize',draw);draw();
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;let hold=false;
+car.addEventListener('pointerenter',()=>hold=true);car.addEventListener('pointerleave',()=>hold=false);car.addEventListener('touchstart',()=>hold=true,{passive:true});
+if(!reduce)setInterval(()=>{if(hold||document.hidden)return;const i=idx();go(i>=pages()-1?0:i+1)},5000);
+})();
+</script>
+
+<script>
+const pilares=[
+  {t:"Financeiro",s:"Previsibilidade e Sustentabilidade",i:["Controle de fluxo de caixa e DRE","Gestão por indicadores (KPIs)","Decisões baseadas em dados","Redução de perdas e desperdícios"]},
+  {t:"Processos",s:"Padronização e Escalabilidade",i:["Mapeamento de processos","Padronização operacional","Criação de POPs e fluxogramas","Indicadores de desempenho","Redução de retrabalho e gargalos","Melhoria contínua","Acompanhamento da execução","Otimização da rotina operacional","Precificação","Análise de estoques","Processo de compras","Integração entre setores"]},
+  {t:"Recursos Humanos",s:"Engajamento e Liderança",i:["Estruturação de cargos e salários","Desenvolvimento de lideranças","Retenção de talentos e cultura","Recrutamento e onboarding","Treinamentos de liderança para equipes"]},
+  {t:"Contábil",s:"Conformidade e Segurança",i:["Apuração correta de tributos","Conformidade legal e fiscal","Transparência e suporte à gestão","Redução de riscos e multas","Adequação à Reforma Tributária (IBS e CBS)","Contabilidade especializada por segmento"]}
+];
+const panel=document.getElementById('panel');
+function show(n){
+  const p=pilares[n];
+  const msg=encodeURIComponent('Olá! Tenho interesse no pilar '+p.t+'.');
+  panel.innerHTML=`<div class="fade"><div class="bg-num">0${n+1}</div><div class="sub">${p.s}</div><h3>${p.t}</h3><ul class="${p.i.length>6?'two':''}">${p.i.map(x=>`<li><svg class="arrow-ic"><use href="#arw"/></svg>${x}</li>`).join('')}</ul><a class="btn btn-primary" href="https://wa.me/5587988626321?text=${msg}" target="_blank" rel="noopener">Solicitar proposta</a></div>`;
+  document.querySelectorAll('.p-tab').forEach((b,k)=>{b.classList.toggle('active',k===n);b.setAttribute('aria-selected',k===n)});
+}
+document.querySelectorAll('.p-tab').forEach(b=>b.addEventListener('click',()=>show(+b.dataset.i)));
+show(0);
+
+const hd=document.querySelector('header');
+addEventListener('scroll',()=>hd.classList.toggle('scrolled',scrollY>30),{passive:true});
+document.querySelector('.burger').addEventListener('click',()=>hd.classList.toggle('open'));
+document.querySelectorAll('.nav ul a').forEach(a=>a.addEventListener('click',()=>hd.classList.remove('open')));
+
+document.getElementById('y').textContent=new Date().getFullYear();
+</script>
+
+</body></html>
